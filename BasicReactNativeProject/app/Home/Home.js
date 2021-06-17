@@ -15,6 +15,7 @@ import {bindActionCreators} from 'redux';
 
 import * as actions from '../provider/homeAction';
 import * as ActionTypes from '../provider/homeActionTypes';
+import I18n from '../l18n/I18n'
 
 class Home extends React.Component{
 
@@ -39,6 +40,7 @@ class Home extends React.Component{
                 return <SafeAreaView style={{flex:1,backgroundColor:'white'}}>
                     <View style={{flex:1,backgroundColor:'white'}}>
                         <Text>{this.props.name}</Text>
+                        <Text>{I18n.t("signIn.title")}</Text>
                         <Button title={"button"}
                         onPress={()=>{
                             this.props.testAction("aaaaaa")
