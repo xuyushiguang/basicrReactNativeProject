@@ -1,5 +1,6 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
+
 import Storage from 'react-native-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 // import {sync} from './sync'
  
  let storage = undefined
@@ -38,7 +39,7 @@ import Storage from 'react-native-storage';
    }
  }
  
- const _storage = {
+ let myStorage = {
  
    // 使用key来保存数据。这些数据一般是全局独有的，常常需要调用的。
    // 除非你手动移除，这些数据会被永久保存，而且默认不会过期。
@@ -131,7 +132,7 @@ import Storage from 'react-native-storage';
    }
  }
  
- export export {_storage as storage}
+ export default myStorage;
 
 
 

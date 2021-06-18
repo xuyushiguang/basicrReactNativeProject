@@ -11,6 +11,8 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		634D53AF267C703100F7B161 /* QMapViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 634D53AC267C703100F7B161 /* QMapViewManager.m */; };
+		634D53B0267C703100F7B161 /* GaodeMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 634D53AE267C703100F7B161 /* GaodeMapView.m */; };
 		763F06DD83966878D6B74FD1 /* libPods-BasicReactNativeProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31DB2D9FB0F0B28D71E12E40 /* libPods-BasicReactNativeProject.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		B754CEA7CB32A6B3DEDDF099 /* libPods-BasicReactNativeProject-BasicReactNativeProjectTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE48930A6864D5BDEC40880 /* libPods-BasicReactNativeProject-BasicReactNativeProjectTests.a */; };
@@ -39,6 +41,10 @@
 		1932B13694F6299FB4A8A637 /* Pods-BasicReactNativeProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BasicReactNativeProject.release.xcconfig"; path = "Target Support Files/Pods-BasicReactNativeProject/Pods-BasicReactNativeProject.release.xcconfig"; sourceTree = "<group>"; };
 		2CE3E571F7237E7F8BF4C98B /* Pods-BasicReactNativeProject-BasicReactNativeProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BasicReactNativeProject-BasicReactNativeProjectTests.release.xcconfig"; path = "Target Support Files/Pods-BasicReactNativeProject-BasicReactNativeProjectTests/Pods-BasicReactNativeProject-BasicReactNativeProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		31DB2D9FB0F0B28D71E12E40 /* libPods-BasicReactNativeProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BasicReactNativeProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		634D53AB267C703000F7B161 /* QMapViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QMapViewManager.h; path = BasicReactNativeProject/QMapViewManager.h; sourceTree = "<group>"; };
+		634D53AC267C703100F7B161 /* QMapViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QMapViewManager.m; path = BasicReactNativeProject/QMapViewManager.m; sourceTree = "<group>"; };
+		634D53AD267C703100F7B161 /* GaodeMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GaodeMapView.h; path = BasicReactNativeProject/GaodeMapView.h; sourceTree = "<group>"; };
+		634D53AE267C703100F7B161 /* GaodeMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GaodeMapView.m; path = BasicReactNativeProject/GaodeMapView.m; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = BasicReactNativeProject/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		871629C3351F2AA86FD12AD1 /* Pods-BasicReactNativeProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BasicReactNativeProject.debug.xcconfig"; path = "Target Support Files/Pods-BasicReactNativeProject/Pods-BasicReactNativeProject.debug.xcconfig"; sourceTree = "<group>"; };
 		A85E83096E4C44C3A1501933 /* Pods-BasicReactNativeProject-BasicReactNativeProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BasicReactNativeProject-BasicReactNativeProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-BasicReactNativeProject-BasicReactNativeProjectTests/Pods-BasicReactNativeProject-BasicReactNativeProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -88,6 +94,10 @@
 			children = (
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
+				634D53AD267C703100F7B161 /* GaodeMapView.h */,
+				634D53AE267C703100F7B161 /* GaodeMapView.m */,
+				634D53AB267C703000F7B161 /* QMapViewManager.h */,
+				634D53AC267C703100F7B161 /* QMapViewManager.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
@@ -411,8 +421,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				634D53B0267C703100F7B161 /* GaodeMapView.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				634D53AF267C703100F7B161 /* QMapViewManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,8 +17,8 @@ import {bindActionCreators} from 'redux';
 import * as actions from '../provider/homeAction';
 import * as ActionTypes from '../provider/homeActionTypes';
 import I18n from '../l18n/I18n';
+import GaodeMapView from './GaodeMapView';
 
-import  storage  from '../storage';
 
 class Home extends React.Component{
 
@@ -51,16 +51,17 @@ class Home extends React.Component{
                         onPress={()=>{
                             // this.props.testAction("aaaaaa")
                             //store.dispatch({type:ActionTypes.TestTag,name:"sssqqqqqsss"})
-                            storage.save("123","aaaaa")
+                            // storage.save("123","aaaaa")
                         }}
                         ></Button>
                         <Button title={"button"}
                         onPress={()=>{
-                            storage.load("123",(ret)=>{
-                                this.setState({age:ret})
-                            })
+                            // storage.load("123",(ret)=>{
+                            //     this.setState({age:ret})
+                            // })
                         }}
                         ></Button>
+                        <GaodeMapView style={{with:100,height:50}}></GaodeMapView>
                     </View>
                 </SafeAreaView>
         }
