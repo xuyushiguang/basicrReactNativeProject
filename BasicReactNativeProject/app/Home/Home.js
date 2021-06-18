@@ -5,7 +5,7 @@ import { SafeAreaView,
     View,
     Image,
     Button,
-    AsyncStorageStatic
+    Dimensions
 } from 'react-native';
 
 import {Action,
@@ -19,6 +19,8 @@ import * as ActionTypes from '../provider/homeActionTypes';
 import I18n from '../l18n/I18n';
 import GaodeMapView from './GaodeMapView';
 
+let windowWidth = Dimensions.get('window').width;
+let windowHeight = Dimensions.get('window').Height;
 
 class Home extends React.Component{
 
@@ -42,6 +44,12 @@ class Home extends React.Component{
         componentDidUpdate(prevProps){
         }
         render(){
+           const region = {
+                latitude: 37.48,
+                longitude: -122.16,
+                latitudeDelta: 0.1,
+                longitudeDelta: 0.1,
+              };
                 return <SafeAreaView style={{flex:1,backgroundColor:'white'}}>
                     <View style={{flex:1,backgroundColor:'white'}}>
                         <Text>{this.props.name}</Text>
@@ -61,7 +69,10 @@ class Home extends React.Component{
                             // })
                         }}
                         ></Button>
-                        <GaodeMapView style={{with:100,height:50}}></GaodeMapView>
+                        <GaodeMapView style={{flex:1}}
+                        zoomEnabled={true}
+                        region={region}
+                        ></GaodeMapView>
                     </View>
                 </SafeAreaView>
         }

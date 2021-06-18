@@ -43,6 +43,7 @@ export default class QuecRouter extends React.Component{
                         <Scene key="Home" 
                                 component={Home}
                                 title="Home"
+                                icon={TabIcon}
                                 initial
                                 >
                         </Scene>
