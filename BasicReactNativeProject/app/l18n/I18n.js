@@ -1,7 +1,7 @@
 /**
  * 多语言配置文件react-native-localize
  */
- import I18n from 'react-native-i18n';
+ import I18n from 'i18n-js';
  import * as RNLocalize from 'react-native-localize';
  import cn from './lang/zh-cn';
  import en from './lang/en-us';

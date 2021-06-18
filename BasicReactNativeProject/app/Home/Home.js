@@ -5,6 +5,7 @@ import { SafeAreaView,
     View,
     Image,
     Button,
+    AsyncStorageStatic
 } from 'react-native';
 
 import {Action,
@@ -15,13 +16,16 @@ import {bindActionCreators} from 'redux';
 
 import * as actions from '../provider/homeAction';
 import * as ActionTypes from '../provider/homeActionTypes';
-import I18n from '../l18n/I18n'
+import I18n from '../l18n/I18n';
+
+import  storage  from '../storage';
 
 class Home extends React.Component{
 
         constructor(props){
                 super(props)
                 this.state={
+                    age:"100"
                 }
         }
         static defaultProps={
@@ -31,6 +35,7 @@ class Home extends React.Component{
 
         }
         componentDidMount(){
+            
         }
         componentWillUnmount(){
         }
@@ -40,11 +45,20 @@ class Home extends React.Component{
                 return <SafeAreaView style={{flex:1,backgroundColor:'white'}}>
                     <View style={{flex:1,backgroundColor:'white'}}>
                         <Text>{this.props.name}</Text>
+                        <Text>{this.state.age}</Text>
                         <Text>{I18n.t("signIn.title")}</Text>
                         <Button title={"button"}
                         onPress={()=>{
-                            this.props.testAction("aaaaaa")
+                            // this.props.testAction("aaaaaa")
                             //store.dispatch({type:ActionTypes.TestTag,name:"sssqqqqqsss"})
+                            storage.save("123","aaaaa")
+                        }}
+                        ></Button>
+                        <Button title={"button"}
+                        onPress={()=>{
+                            storage.load("123",(ret)=>{
+                                this.setState({age:ret})
+                            })
                         }}
                         ></Button>
                     </View>
