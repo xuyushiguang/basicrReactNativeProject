@@ -23,12 +23,12 @@ class TestRedView extends React.Component{
         }
         static defaultProps={
             str : "qqqqqqq",
-            
+            onClick:null,
 
         }
         static propTypes={
             zoomEnabled: PropTypes.string,
-            
+            onClick:PropTypes.func,
         }
         
         render(){

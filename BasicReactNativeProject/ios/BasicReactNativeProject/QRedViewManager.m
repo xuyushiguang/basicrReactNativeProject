@@ -31,5 +31,8 @@ RCT_CUSTOM_VIEW_PROPERTY(str, NSString *, QRedView)
   [view setStr:json];
 }
 
+RCT_EXPORT_VIEW_PROPERTY(age, NSString*)
+
+RCT_EXPORT_VIEW_PROPERTY(onClick, RCTBubblingEventBlock)
 
 @end

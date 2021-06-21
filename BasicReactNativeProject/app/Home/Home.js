@@ -36,7 +36,8 @@ class Home extends React.Component{
                 super(props)
                 this.state={
                     age:"100",
-                    str:"wwwww"
+                    str:"wwwww",
+                    btStr:"1111"
                 }
                 DeviceEventEmitter.addListener("qwer",(title)=>{
                     this.setState({age:"dddddd"})
@@ -64,6 +65,7 @@ class Home extends React.Component{
                     <View style={{flex:1,backgroundColor:'white'}}>
                         <Text>{this.props.name}</Text>
                         <Text>{this.state.age}</Text>
+                        <Text>btStr={this.state.btStr}</Text>
                         <Text>{I18n.t("signIn.title")}</Text>
                         <Button title={"button1"}
                         onPress={()=>{
@@ -84,6 +86,9 @@ class Home extends React.Component{
 
                         <TestRedView style={{width:100,height:100}}
                         str={this.state.str}
+                        onClick={(e)=>{
+                            this.setState({btStr:e.nativeEvent["press"]})
+                        }}
                         ></TestRedView>
 
                         <GaodeMapView style={{flex:1}}

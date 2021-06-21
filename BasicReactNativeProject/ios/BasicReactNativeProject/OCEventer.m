@@ -22,11 +22,11 @@ static int acount = 0;
 {
   self = [super init];
   if (self) {
-    _timer = [NSTimer scheduledTimerWithTimeInterval:2.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
-      NSLog(@"sendEventWithName");
-      acount ++;
-      [self sendEventWithName:@"sendSelectedItem" body:@{@"title":[@(acount) stringValue]}];
-    }];
+//    _timer = [NSTimer scheduledTimerWithTimeInterval:2.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
+//      NSLog(@"sendEventWithName");
+//      acount ++;
+//      [self sendEventWithName:@"sendSelectedItem" body:@{@"title":[@(acount) stringValue]}];
+//    }];
   }
   return self;
 }
