@@ -5,7 +5,10 @@ import { SafeAreaView,
     View,
     Image,
     Button,
-    Dimensions
+    Dimensions,
+    DeviceEventEmitter,
+    NativeModules,
+    NativeEventEmitter,
 } from 'react-native';
 
 import {Action,
@@ -18,30 +21,37 @@ import * as actions from '../provider/homeAction';
 import * as ActionTypes from '../provider/homeActionTypes';
 import I18n from '../l18n/I18n';
 import GaodeMapView from './GaodeMapView';
+import TestRedView from './TestRedView'
 
 let windowWidth = Dimensions.get('window').width;
 let windowHeight = Dimensions.get('window').Height;
+
+var OCEventer = NativeModules.OCEventer;
+const OCEventEmitter = new NativeEventEmitter(OCEventer);
+
 
 class Home extends React.Component{
 
         constructor(props){
                 super(props)
                 this.state={
-                    age:"100"
+                    age:"100",
+                    str:"wwwww"
                 }
+                DeviceEventEmitter.addListener("qwer",(title)=>{
+                    this.setState({age:"dddddd"})
+                })
+                this.addListener = OCEventEmitter.addListener("sendSelectedItem",
+                (title)=>{
+                    console.log("===="+title.title);
+                    this.setState({age:title.title})
+                });
         }
         static defaultProps={
             name:"0"
         }
         static propTypes={
 
-        }
-        componentDidMount(){
-            
-        }
-        componentWillUnmount(){
-        }
-        componentDidUpdate(prevProps){
         }
         render(){
            const region = {
@@ -55,24 +65,33 @@ class Home extends React.Component{
                         <Text>{this.props.name}</Text>
                         <Text>{this.state.age}</Text>
                         <Text>{I18n.t("signIn.title")}</Text>
-                        <Button title={"button"}
+                        <Button title={"button1"}
                         onPress={()=>{
                             // this.props.testAction("aaaaaa")
                             //store.dispatch({type:ActionTypes.TestTag,name:"sssqqqqqsss"})
                             // storage.save("123","aaaaa")
+                            //this.setState({str:"dddddd"})
+                            DeviceEventEmitter.emit("qwer","zzzzzz")
                         }}
                         ></Button>
-                        <Button title={"button"}
+                        <Button title={"button2"}
                         onPress={()=>{
                             // storage.load("123",(ret)=>{
                             //     this.setState({age:ret})
                             // })
                         }}
                         ></Button>
+
+                        <TestRedView style={{width:100,height:100}}
+                        str={this.state.str}
+                        ></TestRedView>
+
                         <GaodeMapView style={{flex:1}}
                         zoomEnabled={true}
                         region={region}
                         ></GaodeMapView>
+                        
+
                     </View>
                 </SafeAreaView>
         }
