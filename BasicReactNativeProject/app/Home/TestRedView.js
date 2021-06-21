@@ -8,11 +8,15 @@ import { SafeAreaView,
     requireNativeComponent,
     Dimensions,
     NativeModules,
+    NativeEventEmitter,
     
 } from 'react-native';
 // import  RCTDeviceEventEmitter from 'RCTDe'
 
 import PropTypes from 'prop-types'
+
+var OCEventer = NativeModules.OCEventer;
+const OCEventEmitter = new NativeEventEmitter(OCEventer);
 
 class TestRedView extends React.Component{
 
@@ -20,6 +24,11 @@ class TestRedView extends React.Component{
                 super(props)
                 this.state={
                 }
+                this.addListener = OCEventEmitter.addListener("sendSelectedItem",
+                (title)=>{
+                    console.log("===="+title.title);
+                    this.setState({age:title.title})
+                });
         }
         static defaultProps={
             str : "qqqqqqq",

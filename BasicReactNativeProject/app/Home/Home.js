@@ -26,10 +26,6 @@ import TestRedView from './TestRedView'
 let windowWidth = Dimensions.get('window').width;
 let windowHeight = Dimensions.get('window').Height;
 
-var OCEventer = NativeModules.OCEventer;
-const OCEventEmitter = new NativeEventEmitter(OCEventer);
-
-
 class Home extends React.Component{
 
         constructor(props){
@@ -42,11 +38,7 @@ class Home extends React.Component{
                 DeviceEventEmitter.addListener("qwer",(title)=>{
                     this.setState({age:"dddddd"})
                 })
-                this.addListener = OCEventEmitter.addListener("sendSelectedItem",
-                (title)=>{
-                    console.log("===="+title.title);
-                    this.setState({age:title.title})
-                });
+                
         }
         static defaultProps={
             name:"0"

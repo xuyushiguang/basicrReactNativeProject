@@ -8,8 +8,11 @@ import { SafeAreaView,
 } from 'react-native';
 import {Drawer, Router,Scene, Tabs} from 'react-native-router-flux';
 
-import Home from '../Home/Home';
-import My from '../My/My';
+// import Home from '../Home/Home';
+// import My from '../My/My';
+
+import Home from '../android/Home'
+import My from '../android/My'
 
 class TabIcon extends React.Component{
     render(){
@@ -53,6 +56,7 @@ export default class QuecRouter extends React.Component{
                             icon={TabIcon}
                             >
                         </Scene>
+
                     </Scene>
                 </Scene>
             </Router>

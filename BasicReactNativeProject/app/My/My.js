@@ -19,13 +19,26 @@ export default class My extends React.Component{
         }
         componentWillUnmount(){
         }
-        componentDidUpdate(prevProps){
-        }
+        
         render(){
                 return <SafeAreaView style={{flex:1,backgroundColor:'white'}}>
-                    <View style={{flex:1,backgroundColor:'white'}}>
-                        <Text>My</Text>
-                    </View>
-                </SafeAreaView>
+                <View style={{flex:1,backgroundColor:'white'}}>
+                    <Text></Text>
+                    <Text></Text>
+                    <Text>btStr</Text>
+                    <Text></Text>
+                    <Button title={"button1"}
+                    onPress={()=>{
+                        
+                    }}
+                    ></Button>
+                    <Button title={"button2"}
+                    onPress={()=>{
+                        
+                    }}
+                    ></Button>
+
+                </View>
+            </SafeAreaView>
         }
 } 
