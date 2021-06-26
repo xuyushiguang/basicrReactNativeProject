@@ -25,7 +25,8 @@ static int acount = 0;
 //    _timer = [NSTimer scheduledTimerWithTimeInterval:2.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
 //      NSLog(@"sendEventWithName");
 //      acount ++;
-//      [self sendEventWithName:@"sendSelectedItem" body:@{@"title":[@(acount) stringValue]}];
+//
+//      [self sendEventWithName:@"sendSelectedItem" body:@{@"title":@[@1,@2,@3]}];
 //    }];
   }
   return self;

@@ -13,6 +13,7 @@ const MyColorView = requireNativeComponent('MyColorView');
 
 var MyTestModule = NativeModules.MyTestModule;
 
+
 export default class Home extends React.Component{
 
     constructor(props){

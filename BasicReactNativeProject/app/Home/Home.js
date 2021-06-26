@@ -14,7 +14,6 @@ import { SafeAreaView,
 import {Action,
     connect,
 } from 'react-redux';
-
 import {bindActionCreators} from 'redux';
 
 import * as actions from '../provider/homeAction';

@@ -26,8 +26,8 @@ class TestRedView extends React.Component{
                 }
                 this.addListener = OCEventEmitter.addListener("sendSelectedItem",
                 (title)=>{
-                    console.log("===="+title.title);
-                    this.setState({age:title.title})
+                    console.log("==title.title=="+title.title);
+                    // this.setState({age:title.title})
                 });
         }
         static defaultProps={

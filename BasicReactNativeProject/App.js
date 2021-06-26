@@ -35,8 +35,53 @@ import QuecRouter from './app/router/QuecRouter';
 
 import store from './app/provider/store';
 
+import { Buffer } from 'buffer';
+
 class App extends React.Component{
   
+  constructor(){
+    super();
+  }
+
+  componentDidMount(){
+    var map = new Map();
+    map[1] = {ti:5,ccc:()=>{}};
+    console.log('++++============',map.size);
+    map.delete(1);
+    console.log('++++====delete========',map);
+    
+  }
+
+  crcSecurity(data){
+    let nXor = this.xor_calculation(data.slice(4),data.length - 7);
+    let oldXor = data[3];
+    if(nXor == oldXor){
+      let cmdType = data[4];
+      let cmd = data[5];
+      if(cmdType == 0x53){
+        console.log("=====上报数据 ====",data);
+      }else{
+        console.log("=====指令 order数据 ====",data);
+      }
+    }else{
+      console.log("=====crc error====",data);
+    }
+  }
+
+  xor_calculation(data,offset){
+    let xor = 0;
+    for (let i = 0; i < offset; i++) {
+      if (i == 0) {
+        xor = data[i];
+      }else{
+        xor = xor ^ data[i];
+      }
+    }
+    return xor;
+  }
+
+
+
   render(){
     return <Provider store={store}>
       <QuecRouter></QuecRouter>
