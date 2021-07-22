@@ -15,6 +15,10 @@
 #import <React/RCTLog.h>
 #import "OCEventer.h"
 
+//#import "QAsyncTcpSocket.h"
+#import <BLWebSocketsServer/BLWebSocketsServer.h>
+#import "QAsyncUDPSocket.h"
+
 static void InitializeFlipper(UIApplication *application) {
   FlipperClient *client = [FlipperClient sharedClient];
   SKDescriptorMapper *layoutDescriptorMapper = [[SKDescriptorMapper alloc] initWithDefaults];
@@ -26,9 +30,11 @@ static void InitializeFlipper(UIApplication *application) {
 }
 #endif
 
-@interface AppDelegate ()
+@interface AppDelegate ()<QAsyncUDPSocketDelegate>
 {
 //  OCEventer * _oceventer;
+  QAsyncUDPSocket *_udpSocket;
+  
 }
 
 
@@ -38,6 +44,20 @@ static void InitializeFlipper(UIApplication *application) {
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  
+//  [[BLWebSocketsServer sharedInstance] setHandleRequestBlock:^NSData *(NSData *requestData) {
+////    NSLog(@"****oc*****setHandleRequestBlock*********%@",requestData);
+//    NSLog(@"****oc*****setHandleRequestBlock*********%@",[[NSString alloc] initWithData:requestData encoding:NSUTF8StringEncoding]);
+//    [[BLWebSocketsServer sharedInstance] pushToAll:[@"1234qwr" dataUsingEncoding:NSUTF8StringEncoding]];
+//    return [@"asdfgg" dataUsingEncoding:NSUTF8StringEncoding];//也可以在这里返回数据
+//  }];
+//
+//  [[BLWebSocketsServer sharedInstance] startListeningOnPort:12345 withProtocolName:@"echo-protocol" andCompletionBlock:^(NSError *error) {
+//    NSLog(@"****oc*****startListeningOnPort*********%@",error);
+//
+//  }];
+  
+  
 #ifdef FB_SONARKIT_ENABLED
   InitializeFlipper(application);
 #endif
@@ -54,6 +74,15 @@ static void InitializeFlipper(UIApplication *application) {
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
+  
+  
+//  _udpSocket = [[QAsyncUDPSocket alloc] initWithDelegate:self];
+//
+//  [_udpSocket bindToPort:1233];
+//
+//  [NSTimer scheduledTimerWithTimeInterval:2 repeats:YES block:^(NSTimer * _Nonnull timer) {
+//    [_udpSocket writeDate:[@"123456" dataUsingEncoding:NSUTF8StringEncoding] host:@"127.0.0.1" port:1234];
+//  }];
   
   return YES;
 }

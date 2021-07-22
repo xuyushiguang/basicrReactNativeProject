@@ -12,6 +12,12 @@ target 'BasicReactNativeProject' do
     :hermes_enabled => false
   )
 
+  pod 'BLWebSocketsServer'
+  
+  pod 'react-native-udp', :path => '../node_modules/react-native-udp'
+
+  #pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
   target 'BasicReactNativeProjectTests' do
     inherit! :complete
     # Pods for testing
