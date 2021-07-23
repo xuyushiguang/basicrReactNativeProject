@@ -21,8 +21,8 @@ import { bindActionCreators } from 'redux';
 import * as actions from '../provider/home/actions';
 import * as ActionTypes from '../provider/home/actionsTypes';
 import I18n from '../l18n/I18n';
-import GaodeMapView from './GaodeMapView';
-import TestRedView from './TestRedView';
+// import GaodeMapView from './GaodeMapView';
+// import TestRedView from './TestRedView';
 import Home2 from './Home2';
 import { Header } from 'react-native-elements';
 
@@ -64,9 +64,18 @@ class Home extends React.Component {
         console.log("=====aaaaaaa======");
         return <View style={{ flex: 1, backgroundColor: 'white' }}>
             <Header
-                leftComponent={{ icon: 'menu', color: '#fff', iconStyle: { color: '#fff' } }}
+                leftComponent={{
+                    icon: 'menu', color: '#fff', iconStyle: { color: '#fff' },
+                    onPress: () => {
+                        console.log("=====onPressonPress======");
+                    }
+
+                }}
                 centerComponent={{ text: 'MY TITLE', style: { color: '#fff' } }}
                 rightComponent={{ icon: 'home', color: '#fff' }}
+                backgroundColor="red"
+
+
             ></Header>
             <View style={{ flex: 1, backgroundColor: 'white' }}>
                 <Text>{this.props.name}</Text>
@@ -95,14 +104,14 @@ class Home extends React.Component {
                 </View>
 
 
-                <TestRedView style={{ width: 100, height: 100 }}
+                {/* <TestRedView style={{ width: 100, height: 100 }}
                     str={this.state.str}
                     onClick={(e) => {
                         this.setState({ btStr: e.nativeEvent["press"] })
                     }}
-                ></TestRedView>
+                ></TestRedView> */}
 
-                <GaodeMapView style={{ flex: 1 }}
+                {/* <GaodeMapView style={{ flex: 1 }}
                     zoomEnabled={true}
                     region={{
                         latitude: 37.48,
@@ -110,11 +119,11 @@ class Home extends React.Component {
                         latitudeDelta: 0.1,
                         longitudeDelta: 0.1,
                     }}
-                ></GaodeMapView>
+                ></GaodeMapView> */}
 
 
             </View>
-        </View>
+        </View >
     }
 }
 

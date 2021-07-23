@@ -12,7 +12,7 @@ import { Drawer, Router, Scene, Tabs } from 'react-native-router-flux';
 import Home from '../Home/Home';
 import Home2 from '../Home/Home2';
 import My from '../My/My';
-
+import ElementView from '../Home/ElementView';
 // import Home from '../android/Home'
 // import My from '../android/My'
 
@@ -52,6 +52,13 @@ export default class QuecRouter extends React.Component {
                         initial
                     >
                     </Scene>
+                    <Scene key="ElementView"
+                        component={ElementView}
+                        title="ElementView"
+                        icon={TabIcon}
+                    >
+                    </Scene>
+
                     <Scene key="My"
                         component={My}
                         title="My"

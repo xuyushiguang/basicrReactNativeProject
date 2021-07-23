@@ -49,6 +49,7 @@ import { NetworkInfo } from 'react-native-network-info';
 import QueryString from 'querystring';
 
 
+
 var SocketIO = require('react-native-socket-io');
 
 global.rootStore = store;
@@ -79,8 +80,7 @@ class App extends React.Component {
     return Buffer(arr);
   }
 
-  componentDidMount() {
-
+  aaa() {
     let buf = Buffer(20);
     let value = -256;
     console.log('=====value < 0======', value < 0);
@@ -115,6 +115,11 @@ class App extends React.Component {
       ss = 0 - ss;
     }
     console.log("======ss=======", ss);
+
+  }
+
+  componentDidMount() {
+
 
   }
 
